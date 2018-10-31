@@ -12,7 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 import os
-
+import request
 
 app = Flask(__name__)
 
@@ -27,7 +27,7 @@ def teste():
 
 @app.route('/vagalumetop/', methods=['GET'])
 def vagalumetop15():
-    # e.g: http://localhost:5000/vagalume/?artista='mamomas'
+    # e.g: http://localhost:5000/vagalumetop/?artista='mamomas'
     bar = request.args.to_dict()
     artista = bar['artista']
     test = {'artista':artista}
