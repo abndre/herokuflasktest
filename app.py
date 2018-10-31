@@ -13,6 +13,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import os
 
+options = ChromeOptions()
+options.binary_location = "/app/.apt/usr/bin/google-chrome-stable"
+driver = webdriver.Chrome(chrome_options=options)
+
 
 app = Flask(__name__)
 
@@ -37,3 +41,7 @@ def vagalumetop15():
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 5000))
   app.run(host='0.0.0.0', port=port, debug=True)
+
+#heroku buildpacks:add https://github.com/kevinsawicki/heroku-buildpack-xvfb-google-chrome/ --app
+#heroku buildpacks:add https://github.com/heroku/heroku-buildpack-chromedriver --app
+#heroku stack:set cedar-14 -a stocksdata --app
