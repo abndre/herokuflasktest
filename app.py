@@ -1,4 +1,6 @@
 from flask import Flask
+from flask import jsonify
+
 import os
 
 
@@ -10,7 +12,17 @@ def hello_world():
 
 @app.route('/api')
 def teste():
-    return {'nome':'Andre'}
+	end = jsonify({'nome':'Andre'})
+    return end
+
+@app.route('/vagalumetop/', methods=['GET'])
+def vagalumetop15():
+    # e.g: http://localhost:5000/vagalume/?artista='mamomas'
+    bar = request.args.to_dict()
+    artista = bar['artista']
+    test = {'artista':artista}
+    test = jsonify(test)
+    return test
 
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 5000))
