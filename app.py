@@ -13,7 +13,7 @@ def hello_world():
 @app.route('/api')
 def teste():
 	end = jsonify({'nome':'Andre'})
-    return end
+	return end
 
 @app.route('/vagalumetop/', methods=['GET'])
 def vagalumetop15():
