@@ -13,6 +13,9 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import os
 
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+
+
 options = ChromeOptions()
 options.binary_location = "/app/.apt/usr/bin/google-chrome-stable"
 driver = webdriver.Chrome(chrome_options=options)
